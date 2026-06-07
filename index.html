@@ -309,13 +309,7 @@ document.getElementById("formSection")
 document.getElementById("thankyouPage")
 .style.display="block";
 
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead', {
-        value: 499,
-        currency: 'INR'
-    });
-  }
-
+}
 catch(err){
 
 message.innerText="Submission failed.";
