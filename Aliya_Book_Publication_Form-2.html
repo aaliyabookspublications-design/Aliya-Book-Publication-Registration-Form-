@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aliya Book Publication Registration Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f7fb;padding:20px;}
+.container{max-width:850px;margin:auto;}
+.hero{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:30px;border-radius:20px;text-align:center;margin-bottom:20px;}
+.card{background:#fff;padding:20px;border-radius:18px;margin-bottom:18px;box-shadow:0 6px 20px rgba(0,0,0,.08);}
+.card h2{color:#1e3a8a;margin-bottom:15px;}
+.form-group{margin-bottom:15px;}
+label{display:block;margin-bottom:6px;font-weight:600;text-transform:uppercase;}
+input{width:100%;padding:12px;border:1px solid #d6d6d6;border-radius:10px;}
+.checkbox{display:flex;gap:10px;align-items:flex-start;}
+.checkbox input{width:auto;}
+.submit-btn{width:100%;padding:15px;border:none;border-radius:12px;background:#2563eb;color:#fff;font-size:16px;font-weight:700;cursor:pointer;}
+#message{text-align:center;margin-bottom:12px;font-weight:600;}
+#thankyouPage{display:none;}
+.thank-card{background:#fff;padding:35px;border-radius:20px;text-align:center;}
+.channel-btn{display:block;text-decoration:none;padding:14px;border-radius:12px;margin-top:12px;font-weight:700;color:#fff;}
+.telegram{background:#229ED9;}
+.whatsapp{background:#25D366;}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div id="formSection">
+<div class="hero">
+<h2>Aliya Book Publication</h2>
+<h4>Registration Form</h4>
+<p>Please fill in your details below</p>
+</div>
+
+<form id="demoForm">
+
+<div class="card">
+<h2>Personal Details</h2>
+
+<div class="form-group"><label>NAME</label><input type="text" id="name" required></div>
+<div class="form-group"><label>NUMBER</label><input type="tel" id="number" required></div>
+<div class="form-group"><label>EMAIL</label><input type="email" id="email" required></div>
+<div class="form-group"><label>HOUSE NO</label><input type="text" id="houseno" required></div>
+<div class="form-group"><label>AREA</label><input type="text" id="area" required></div>
+<div class="form-group"><label>DISTRICT</label><input type="text" id="district" required></div>
+<div class="form-group"><label>STATE</label><input type="text" id="state" required></div>
+<div class="form-group"><label>PIN CODE</label><input type="text" id="pincode" required></div>
+
+</div>
+
+<div class="card">
+<div class="checkbox">
+<input type="checkbox" required>
+<span>I confirm that all information provided is correct.</span>
+</div>
+</div>
+
+<p id="message"></p>
+
+<button type="submit" class="submit-btn">SUBMIT</button>
+</form>
+</div>
+
+<div id="thankyouPage">
+<div class="thank-card">
+<h2>🎉 Registration Submitted Successfully!</h2>
+<p>Thank you for submitting your details. Please join our channels for updates.</p>
+
+<a href="https://t.me/aaliyabookpublications" target="_blank" class="channel-btn telegram">📢 Join Telegram Channel</a>
+
+<a href="https://wa.me/918114418588" target="_blank" class="channel-btn whatsapp">💬 Join WhatsApp Channel</a>
+</div>
+</div>
+
+</div>
+
+<script>
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbyvnsuG9L4LDwTi_WzUY75legLdU5QPSrkmLN1oJuyIzE8m0nNAYF7ciEEpvh8TbKk/exec";
+
+document.getElementById("demoForm").addEventListener("submit", async function(e){
+e.preventDefault();
+
+const data={
+"NAME":document.getElementById("name").value.trim(),
+"NUMBER":document.getElementById("number").value.trim(),
+"EMAIL":document.getElementById("email").value.trim(),
+"HOUSE NO":document.getElementById("houseno").value.trim(),
+"AREA":document.getElementById("area").value.trim(),
+"DISTRICT":document.getElementById("district").value.trim(),
+"STATE":document.getElementById("state").value.trim(),
+"PIN CODE":document.getElementById("pincode").value.trim()
+};
+
+const message=document.getElementById("message");
+
+try{
+message.innerText="Submitting...";
+
+await fetch(SCRIPT_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+});
+
+document.getElementById("formSection").style.display="none";
+document.getElementById("thankyouPage").style.display="block";
+
+}catch(err){
+message.innerText="Submission failed.";
+}
+});
+</script>
+
+</body>
+</html>
