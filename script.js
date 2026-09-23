@@ -68,13 +68,7 @@ websiteBtn.addEventListener("click",()=>{
 
 if(typeof fbq !== "undefined"){
 
-fbq("track","Lead",{
-
-value:2,
-
-currency:"INR"
-
-});
+fbq("track","Contact");
 
 }
 
