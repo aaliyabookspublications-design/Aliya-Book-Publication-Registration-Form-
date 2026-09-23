@@ -73,34 +73,6 @@ fbq("track","Contact");
 }
 
 });
-
-// =========================
-// Telegram Contact Event
-// =========================
-
-telegramBtn.addEventListener("click",()=>{
-
-if(typeof fbq !== "undefined"){
-
-fbq("track","Contact");
-
-}
-
-});
-
-// =========================
-// WhatsApp Contact Event
-// =========================
-
-whatsappBtn.addEventListener("click",()=>{
-
-if(typeof fbq !== "undefined"){
-
-fbq("track","Contact");
-
-}
-
-});
 /* ===================================
    Part 3B
    Advanced Tracking
