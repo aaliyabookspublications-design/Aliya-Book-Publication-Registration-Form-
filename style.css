@@ -456,7 +456,7 @@ border-radius:18px;
 
 text-decoration:none;
 
-font-size:17px;
+font-size:18.5px;
 
 font-weight:600;
 
@@ -478,32 +478,8 @@ box-shadow:0 15px 35px rgba(0,0,0,.25);
 
 background:linear-gradient(
 135deg,
-#16A34A,
-#22C55E
-);
-
-}
-
-/* Telegram */
-
-.telegram{
-
-background:linear-gradient(
-135deg,
-#0088cc,
-#1DA1F2
-);
-
-}
-
-/* WhatsApp */
-
-.whatsapp{
-
-background:linear-gradient(
-135deg,
-#22C55E,
-#25D366
+#FF5F2E,
+#F7A928
 );
 
 }
@@ -576,8 +552,8 @@ border-radius:18px;
 
 background:linear-gradient(
 135deg,
-#2563EB,
-#3B82F6
+#16A34A,
+#EAB308
 );
 
 font-size:17px;
@@ -590,7 +566,7 @@ cursor:pointer;
 
 transition:.35s;
 
-box-shadow:0 12px 30px rgba(37,99,235,.35);
+box-shadow:0 12px 30px rgba(22,163,74,.35);
 
 }
 
@@ -720,51 +696,6 @@ font-size:14px;
 
 }
 
-/* Sticky Button */
-
-.sticky{
-
-position:fixed;
-
-bottom:20px;
-
-left:0;
-
-width:100%;
-
-display:flex;
-
-justify-content:center;
-
-z-index:999;
-
-}
-
-.sticky a{
-
-background:#16A34A;
-
-padding:18px 40px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-color:#fff;
-
-font-weight:700;
-
-box-shadow:0 20px 40px rgba(22,163,74,.35);
-
-transition:.35s;
-
-}
-
-.sticky a:hover{
-
-transform:translateY(-4px);
-
-}
 /* ====================================
    PART 2C
    Responsive • Animations • Final Polish
@@ -937,20 +868,6 @@ margin:0 auto;
 font-size:16px;
 
 padding:16px;
-
-}
-
-.sticky{
-
-padding:0 16px;
-
-}
-
-.sticky a{
-
-width:100%;
-
-text-align:center;
 
 }
 
