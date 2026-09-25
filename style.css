@@ -509,10 +509,10 @@ margin-bottom:35px;
 
 /* Apply Now (Website) Button */
 
-.website {
-    --color: #000000;
-    --boder_color: linear-gradient(90deg, #F92F5A 0%, #FF7415 100%);
-    --bg_color: #f3f3f3;
+ .website {
+    --color: #ffffff;
+    --boder_color: linear-gradient(240deg, #F92F5A 50%, #FF7415 50%);
+    --bg_color: linear-gradient(90deg, #F92F5A 0%, #FF7415 100%);
     --border_radius: 10px;
     --width: 220px;
     --border_thikness: 2px;
@@ -520,7 +520,7 @@ margin-bottom:35px;
     z-index: 1;
     width: var(--width);
     height: 52px;
-    color: var(--color) !important;
+    color: #ffffff !important;
     font-size: 16px;
     border-radius: var(--border_radius);
     overflow: hidden;
@@ -538,9 +538,31 @@ margin-bottom:35px;
     box-sizing: border-box;
     font-weight: 700;
     margin: 18px auto;
+    box-shadow: 0 12px 30px rgba(249,47,90,.30);
 }
 
-.website::before {
+
+
+
+
+ .website:hover {
+    color: #ffffff !important;
+    transform: translateY(-3px);
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* dark mode variant, kept for future use */
+html.dark-mode .website {
+    color: #ffffff !important;
+    background: linear-gradient(90deg, #F92F5A 0%, #FF7415 100%);
+}
+
+ .website::before {
     content: '';
     position: absolute;
     z-index: -2;
@@ -562,25 +584,6 @@ margin-bottom:35px;
     background: var(--bg_color);
     border-radius: calc(var(--border_radius) - 2px);
     box-sizing: border-box;
-}
-
-.website:hover {
-    --color: #686868;
-    --boder_color: #000000;
-    transform: translateY(-3px);
-}
-
-@keyframes rotate {
-    100% {
-        transform: rotate(-360deg);
-    }
-}
-
-/* dark mode variant, kept for future use */
-html.dark-mode .website {
-    --color: #ffffff;
-    --bg_color: #1b2022;
-    --boder_color: #f7e705;
 }
 
 /* Trust Section */
