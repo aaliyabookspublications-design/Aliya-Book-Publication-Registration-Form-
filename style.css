@@ -448,7 +448,7 @@ margin-bottom:35px;
     background: linear-gradient(90deg, #20C368 0%, #17BB98 100%);
     background-image: linear-gradient(90deg, #20C368 0%, #17BB98 100%);
     color: #ffffff;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 10px;
     border: none;
     letter-spacing: 1px;
@@ -511,15 +511,15 @@ margin-bottom:35px;
 
  .website {
     --color: #ffffff;
-    --boder_color: linear-gradient(240deg, #F92F5A 50%, #FF7415 50%);
+    --boder_color: linear-gradient(240deg, #ffffff 0%, #87CEEB 50%, #ffffff 100%);
     --bg_color: linear-gradient(90deg, #F92F5A 0%, #FF7415 100%);
     --border_radius: 10px;
-    --width: 220px;
+    --width: 290px;
     --border_thikness: 2px;
     position: relative;
     z-index: 1;
     width: var(--width);
-    height: 52px;
+    height: 62px;
     color: #ffffff !important;
     font-size: 16px;
     border-radius: var(--border_radius);
