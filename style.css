@@ -434,106 +434,184 @@ margin-bottom:35px;
 
 }
 
-/* Buttons */
+/* ====================================
+   New Buttons
+   .btn-155  -> "I Am Confirm Woman" button
+   .btn-184  -> "Apply Now" (website) button
+   (Telegram & WhatsApp buttons removed)
+==================================== */
 
-.btn{
+/* I Am Confirm Woman Button */
 
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-width:100%;
-
-max-width:500px;
-
-margin:18px auto;
-
-padding:18px 24px;
-
-border-radius:18px;
-
-text-decoration:none;
-
-font-size:18.5px;
-
-font-weight:600;
-
-color:#fff;
-
-position:relative;
-
-overflow:hidden;
-
-transition:.35s ease;
-
-box-shadow:0 15px 35px rgba(0,0,0,.25);
-
+.btn-155 {
+    background: #00a1ff;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px 13px;
+    overflow: hidden;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-image: radial-gradient(circle at center center, #06f2c6, #0c66c5);
 }
 
-/* Website */
-
-.website{
-
-background:linear-gradient(
-135deg,
-#FF5F2E,
-#F7A928
-);
-
+.btn-155 .button-icon {
+    background: #ffffff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    border-radius: 7px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    transition: all 0.3s;
 }
 
-/* Hover */
-
-.btn:hover{
-
-transform:translateY(-5px) scale(1.02);
-
-box-shadow:0 20px 45px rgba(0,0,0,.35);
-
+.btn-155:hover .button-icon {
+    width: calc(100% - 10px);
 }
 
-/* Active */
-
-.btn:active{
-
-transform:scale(.97);
-
+.btn-155 .button-icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #000000;
 }
 
-/* Ripple */
-
-.btn::after{
-
-content:"";
-
-position:absolute;
-
-width:0;
-
-height:0;
-
-background:rgba(255,255,255,.35);
-
-border-radius:50%;
-
-top:50%;
-
-left:50%;
-
-transform:translate(-50%,-50%);
-
-transition:.6s;
-
+.btn-155:hover .button-icon svg {
+    transform: translateX(0.1em);
 }
 
-.btn:hover::after{
+.btn-155:active .button-icon {
+    transform: scale(0.95);
+}
 
-width:500px;
+.btn-155:disabled {
+    pointer-events: none;
+    opacity: .65;
+    color: #666666;
+    background: #dcdcdc;
+    text-shadow: none;
+    box-shadow: none;
+}
 
-height:500px;
+.btn-155:disabled .button-icon {
+    background: #cccccc;
+}
 
+/* Apply Now (Website) Button */
+
+.btn-184 {
+    --color: #000000;
+    --boder_color: linear-gradient(240deg, #3bb1ff 50%, #f70505 50%);
+    --bg_color: #f3f3f3;
+    --border_radius: 10px;
+    --width: 140px;
+    --border_thikness: 2px;
+    position: relative;
+    z-index: 1;
+    width: var(--width);
+    height: 50px;
+    color: var(--color);
+    font-size: 15px;
+    border-radius: var(--border_radius);
+    overflow: hidden;
+    transition: .3s;
+    border: none;
+    background: none;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+.btn-184::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: 50%;
+    top: 50%;
+    width: var(--width);
+    height: var(--width);
+    background: var(--boder_color);
+    transform-origin: left top;
+    animation: rotate 2s linear infinite;
+    box-sizing: border-box;
+}
+
+.btn-184::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: var(--border_thikness);
+    background: var(--bg_color);
+    border-radius: calc(var(--border_radius) - 2px);
+    box-sizing: border-box;
+}
+
+.btn-184 .button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+.btn-184 .button-icon svg {
+    width: 1em;
+    height: 1em;
+    color: var(--color);
+    transition: transform 0.3s;
+}
+
+.btn-184:hover {
+    --color: #686868;
+    --boder_color: #000000;
+}
+
+.btn-184:hover .button-icon svg {
+    transform: translateX(3px);
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.btn-184:disabled {
+    pointer-events: none;
+    opacity: .65;
+    color: #7e7e7e;
+    background: #dcdcdc;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.btn-184:disabled::before {
+    animation: none;
+    --boder_color: #a8a7a7;
+}
+
+html.dark-mode .btn-184 {
+    --color: #ffffff;
+    --bg_color: #1b2022;
+    --boder_color: #f7e705;
 }
 
 /* Continue Button */
@@ -552,8 +630,8 @@ border-radius:18px;
 
 background:linear-gradient(
 135deg,
-#16A34A,
-#EAB308
+#2563EB,
+#3B82F6
 );
 
 font-size:17px;
@@ -566,7 +644,7 @@ cursor:pointer;
 
 transition:.35s;
 
-box-shadow:0 12px 30px rgba(22,163,74,.35);
+box-shadow:0 12px 30px rgba(37,99,235,.35);
 
 }
 
@@ -696,6 +774,51 @@ font-size:14px;
 
 }
 
+/* Sticky Button */
+
+.sticky{
+
+position:fixed;
+
+bottom:20px;
+
+left:0;
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+z-index:999;
+
+}
+
+.sticky a{
+
+background:#16A34A;
+
+padding:18px 40px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:#fff;
+
+font-weight:700;
+
+box-shadow:0 20px 40px rgba(22,163,74,.35);
+
+transition:.35s;
+
+}
+
+.sticky a:hover{
+
+transform:translateY(-4px);
+
+}
 /* ====================================
    PART 2C
    Responsive • Animations • Final Polish
@@ -868,6 +991,20 @@ margin:0 auto;
 font-size:16px;
 
 padding:16px;
+
+}
+
+.sticky{
+
+padding:0 16px;
+
+}
+
+.sticky a{
+
+width:100%;
+
+text-align:center;
 
 }
 
